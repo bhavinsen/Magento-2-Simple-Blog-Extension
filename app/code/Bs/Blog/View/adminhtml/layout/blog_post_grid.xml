@@ -4,7 +4,7 @@
     <update handle="blog_post_grid_block"/>
     <container name="root">
         <block class="Magento\Backend\Block\Widget\Grid\Container" 
-            name="mageplaza_post_grid.grid.container" 
+            name="mageplaza_post_grid" 
             template="Magento_Backend::widget/grid/container/empty.phtml"/>
     </container>
 </page>
