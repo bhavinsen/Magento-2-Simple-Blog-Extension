@@ -7,7 +7,7 @@ use Magento\Backend\Block\Widget\Context;
 class Post extends Container
 {
     public function __construct(Context $context)
-    {
+    {        
         $this->_controller = 'adminhtml_post';
         $this->_blockGroup = 'Bs_Blog';
         $this->_headerText = 'Posts';

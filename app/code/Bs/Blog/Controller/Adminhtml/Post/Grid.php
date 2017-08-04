@@ -6,7 +6,7 @@ use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;
 
-class Index extends Action
+class Grid extends Action
 {
     protected $_resultPageFactory;
 
@@ -16,19 +16,10 @@ class Index extends Action
         $this->__resultPageFactory = $resultPageFactory;
     }
 
-    public function execute()
-    {
-        if ($this->getRequest()->getQuery('ajax')) {
-            $this->_forward('grid');
-            return;
-        }        
+     public function execute()
+     {
         $resultPage = $this->__resultPageFactory->create();
-        $resultPage->setActiveMenu('Bs_Blog::post');
-        $resultPage->getConfig()->getTitle()->prepend((__('Posts')));
-
-        //Add bread crumb
-        $resultPage->addBreadcrumb(__('Bs'), __('Bs'));
-        $resultPage->addBreadcrumb(__('Blog'), __('Manage Blogs'));        
         return $resultPage;
-    }
+     }    
 }
+//http://www.mage-world.com/blog/grid-and-form-in-magento-2-admin-panel-part-1.html

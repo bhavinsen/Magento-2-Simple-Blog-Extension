@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://wwww.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/layout/etc/page_configuration.xsd">
+    <update handle="formkey"/>
+    <update handle="blog_post_grid_block"/>
+    <container name="root">
+        <block class="Magento\Backend\Block\Widget\Grid\Container" 
+            name="mageplaza_post_grid.grid.container" 
+            template="Magento_Backend::widget/grid/container/empty.phtml"/>
+    </container>
+</page>
