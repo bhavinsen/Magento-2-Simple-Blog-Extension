@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framewok:View/Layout/etc/page_configuration.xsd" layout="admin-2columns-left">
+    <body>
+        <referenceContainer name="left">
+            <block class="Bs\Blog\Block\Adminhtml\Post\Edit\Tabs" name="blog_post_edit.tabs"/>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block name="blog_post_edit" class="Bs\Blog\Block\Adminhtml\Post\Edit" />
+        </referenceContainer>
+    </body>
+</page>
