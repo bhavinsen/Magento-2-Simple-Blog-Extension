@@ -33,7 +33,7 @@ class MassDelete extends Action
             }
         }
  
-        if (count($newsIds)) {
+        if (count($postIds)) {
             $this->messageManager->addSuccess(
                 __('A total of %1 record(s) were deleted.', count($postIds))
             );

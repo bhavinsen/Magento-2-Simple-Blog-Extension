@@ -16,7 +16,7 @@
                     name="mageplaza_post_grid.grid.massaction" as="grid.massaction">
                     <arguments>
                         <argument name="massaction_id_field" xsi:type="string">id</argument>
-                        <argument name="form_field_name" xsi:type="string">blog</argument>
+                        <argument name="form_field_name" xsi:type="string">post</argument>
                         <argument name="options" xsi:type="array">
                             <item name="delete" xsi:type="array">
                                 <item name="label" xsi:type="string" translate="true">

@@ -26,7 +26,7 @@ class Info extends Generic implements TabInterface
 
     protected function _prepareLayout()
     {
-          $model = $this->_coreRegistry->registry('blog_post');
+        $model = $this->_coreRegistry->registry('blog_post');
 
         $form = $this->_formFactory->create();
         $form->setHtmlIdPrefix('post_');
@@ -39,7 +39,7 @@ class Info extends Generic implements TabInterface
  
         if ($model->getId()) {
             $fieldset->addField(
-                'id',
+                'post_id',
                 'hidden',
                 ['name' => 'post_id']
             );

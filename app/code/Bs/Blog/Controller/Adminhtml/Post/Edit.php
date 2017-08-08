@@ -6,6 +6,7 @@ use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;
 use Magento\Framework\Registry;
+use Bs\Blog\Model\Post;
 use Bs\Blog\Model\PostFactory;
 
 class Edit extends Action
@@ -15,20 +16,19 @@ class Edit extends Action
     protected $_coreRegistry;
 
     public function __construct(Context $context, PageFactory $resultPageFactory, PostFactory $postFactory, Registry $coreRegistry)
-    {
-        parent::__construct($context);
-        $this->__resultPageFactory = $resultPageFactory;
+    {        
+        $this->_resultPageFactory = $resultPageFactory;
         $this->_postFactory = $postFactory;
         $this->_coreRegistry = $coreRegistry;
+        parent::__construct($context);
     }
     
     public function execute()
     {
-        $postId = $this->getRequest()->getParam('id');
-
+        $postId = $this->getRequest()->getParam('id');        
         $model = $this->_postFactory->create();
         if($postId){
-            $model->load($postId);
+            $model->load($postId);          
             if(!$model->getId()){
                 $this->messageManager->addError(__('This post no longer exists.'));
                 $this->_redirect('*/*/');
@@ -36,7 +36,7 @@ class Edit extends Action
             }
         }
 
-        $data = $this->_session->getPostData();
+        $data = $this->_session->getPostData();        
         if (!empty($data)) {
             $model->setData($data);
         }

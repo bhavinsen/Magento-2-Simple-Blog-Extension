@@ -6,29 +6,33 @@ use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;
 use Magento\Framework\Registry;
+use Bs\Blog\Model\Post;
 use Bs\Blog\Model\PostFactory;
 
 class Save extends Action
 {
+    protected $_resultPageFactory;
+    protected $_postFactory;
+    protected $_coreRegistry;
+
     public function __construct(Context $context, PageFactory $resultPageFactory, PostFactory $postFactory, Registry $coreRegistry)
-    {
-        parent::__construct($context);
-        $this->__resultPageFactory = $resultPageFactory;
+    {        
+        $this->_resultPageFactory = $resultPageFactory;
         $this->_postFactory = $postFactory;
         $this->_coreRegistry = $coreRegistry;
+        parent::__construct($context);
     }
 
    public function execute()
    {
       $isPost = $this->getRequest()->getPost();
- 
       if ($isPost) {
          $postModel = $this->_postFactory->create();
-         $postId = $this->getRequest()->getParam('id');
- 
+         $postId = $this->getRequest()->getParam('id');;   
          if ($postId) {
             $postModel->load($postId);
          }
+
          $formData = $this->getRequest()->getParam('post');
          $postModel->setData($formData);
          

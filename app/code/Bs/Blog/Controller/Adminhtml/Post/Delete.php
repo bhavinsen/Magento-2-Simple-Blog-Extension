@@ -6,6 +6,7 @@ use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;
 use Magento\Framework\Registry;
+use Bs\Blog\Model\Post;
 use Bs\Blog\Model\PostFactory;
 
 class Delete extends Action
@@ -33,7 +34,7 @@ class Delete extends Action
          } else {
                try {
                   // Delete news
-                  $newsModel->delete();
+                  $postModel->delete();
                   $this->messageManager->addSuccess(__('The post has been deleted.'));
  
                   // Redirect to grid page

@@ -19,7 +19,7 @@ class Edit extends Container
     protected function _construct()
     {
         $this->_objectId = 'id';
-        $this->_controller = "adminhtml_blog";
+        $this->_controller = "adminhtml_post";
         $this->_blockGroup = "Bs_Blog";
 
         parent::_construct();
@@ -46,7 +46,7 @@ class Edit extends Container
 
     public function getHeaderText()
     {
-        $postRegistry = $this->_coreRegistry->registry('bs_blog');
+        $postRegistry = $this->_coreRegistry->registry('blog_post');        
         if($postRegistry->getId()){
             $postTitle = $this->escapeHtml($postRegistry->getTitle());
             return __("Edit Post '%id'", $postTitle);
@@ -66,5 +66,7 @@ class Edit extends Container
                 }                
             }
         ";
+
+        return parent::_prepareLayout();
     }
 }
